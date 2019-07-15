@@ -10,10 +10,8 @@ namespace DC
             if (current >= houses.Length) return 0;
 
 
-            int considerCurrentHouseValue =
-                houses[current] + StealMaxValue(houses, current + 2);
-            int skipCurrentHouseValue =
-                StealMaxValue(houses, current + 1);
+            int considerCurrentHouseValue = houses[current] + StealMaxValue(houses, current + 2);
+            int skipCurrentHouseValue = StealMaxValue(houses, current + 1);
 
 
             return Math.Max(considerCurrentHouseValue, skipCurrentHouseValue);
