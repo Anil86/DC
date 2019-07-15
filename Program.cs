@@ -7,7 +7,8 @@ namespace DC
         static void Main(string[] args)
         {
             //NumberFactor.Work();
-            HouseThief.Work();
+            //HouseThief.Work();
+            Convert1String2Another.Work();
         }
     }
 }
