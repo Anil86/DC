@@ -6,7 +6,8 @@ namespace DC
     {
         static void Main(string[] args)
         {
-            NumberFactor.Work();
+            //NumberFactor.Work();
+            HouseThief.Work();
         }
     }
 }
