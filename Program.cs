@@ -6,7 +6,7 @@ namespace DC
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Divide & Conquer");
+            NumberFactor.Work();
         }
     }
 }
