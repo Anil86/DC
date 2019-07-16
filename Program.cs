@@ -8,7 +8,8 @@ namespace DC
         {
             //NumberFactor.Work();
             //HouseThief.Work();
-            Convert1String2Another.Work();
+            //Convert1String2Another.Work();
+            ZeroOneKnapsack.Work();
         }
     }
 }
