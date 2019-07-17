@@ -41,8 +41,11 @@ namespace DC
 
         internal static void Work()
         {
-            //string str = "elrmenmet";
-            string str = "ameewmea";
+            string str = "elrmenmet";
+            //string str = "ameewmea";
+            //string str = "abccbua";
+            //string str = "mamdrdm";
+            //string str = "mqadasm";
 
             int longestPalindromeCount = new LongestPalindromicSubsequence().FindLongestPalindromeLength(str);
             WriteLine(longestPalindromeCount);
