@@ -7,11 +7,11 @@ namespace DC
     {
         private int FindLongestPalindromeLength(string str)
         {
-            return FindLongestPalindromeLength(str, 0, str.Length - 1);
+            return FindLongestPalindromeLength(0, str.Length - 1);
 
 
 
-            int FindLongestPalindromeLength(string s, int start, int end)
+            int FindLongestPalindromeLength(int start, int end)
             {
                 // Solve small sub-problem
                 if (start == end) return 1;
@@ -23,12 +23,12 @@ namespace DC
                 // Divide
                 int match = 0, noMatchR = 0, noMatchL = 0;
 
-                if (s[start] == s[end])
-                    match = 2 + FindLongestPalindromeLength(s, start + 1, end - 1);
+                if (str[start] == str[end])
+                    match = 2 + FindLongestPalindromeLength(start + 1, end - 1);
                 else
                 {
-                    noMatchR = FindLongestPalindromeLength(s, start, end - 1);
-                    noMatchL = FindLongestPalindromeLength(s, start + 1, end);
+                    noMatchR = FindLongestPalindromeLength(start, end - 1);
+                    noMatchL = FindLongestPalindromeLength(start + 1, end);
                 }
 
 
