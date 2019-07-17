@@ -10,7 +10,8 @@ namespace DC
             //HouseThief.Work();
             //Convert1String2Another.Work();
             //ZeroOneKnapsack.Work();
-            LongestCommonSubsequence.Work();
+            //LongestCommonSubsequence.Work();
+            LongestPalindromicSubsequence.Work();
         }
     }
 }
