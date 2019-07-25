@@ -13,7 +13,6 @@ namespace DC
 
             int FindMinCost(int row, int column)
             {
-                _count++;
                 // Solve small sub-problems
                 if (row == 0 && column == 0) return array[0, 0];
 
@@ -32,7 +31,7 @@ namespace DC
         }
 
 
-        private static int _count;
+
         internal static void Work()
         {
             int[,] array =
@@ -50,7 +49,7 @@ namespace DC
             //};
 
             int minCost = new MinCostReachArrayEnd().FindMinCost(array);
-            WriteLine(minCost);WriteLine(_count);
+            WriteLine(minCost);
         }
     }
 }
