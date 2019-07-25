@@ -16,10 +16,14 @@ namespace DC
                 // Solve small sub-problems
                 if (row == 0 && column == 0) return array[0, 0];
 
-                if (row == -1 || column == -1) return int.MaxValue;
-
 
                 // Divide
+                // 1st row
+                if (row == 0) return array[0, column] + FindMinCost(0, column - 1);
+                // 1st column
+                if (column == 0) return array[row, 0] + FindMinCost(row - 1, column);
+
+                // Other than 1st row & 1st column
                 int costTillLeftCell = FindMinCost(row, column - 1);
                 int costTillTopCell = FindMinCost(row - 1, column);
 
