@@ -13,7 +13,8 @@ namespace DC
             //LongestCommonSubsequence.Work();
             //LongestPalindromicSubsequence.Work();
             //LongestPalindromicSubstring.Work();
-            MinCostReachArrayEnd.Work();
+            //MinCostReachArrayEnd.Work();
+            NoOfWaysReachLastGivenCost.Work();
         }
     }
 }
