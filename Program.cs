@@ -6,14 +6,14 @@ namespace DC
     {
         static void Main(string[] args)
         {
-            //NumberFactor.Work();
+            NumberFactor.Work();
             //HouseThief.Work();
             //Convert1String2Another.Work();
             //ZeroOneKnapsack.Work();
             //LongestCommonSubsequence.Work();
             //LongestPalindromicSubsequence.Work();
             //LongestPalindromicSubstring.Work();
-            MinCostReachArrayEnd.Work();
+            //MinCostReachArrayEnd.Work();
             //NoOfWaysReachLastGivenCost.Work();
         }
     }
