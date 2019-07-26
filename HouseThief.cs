@@ -7,14 +7,17 @@ namespace DC
     {
         private int StealMaxValue(int[] houses, int current)
         {
+            // Solve small sub-problems
             if (current >= houses.Length) return 0;
 
 
-            int considerCurrentHouseValue = houses[current] + StealMaxValue(houses, current + 2);
-            int skipCurrentHouseValue = StealMaxValue(houses, current + 1);
+            // Divide
+            int valueConsiderCurrentHouse = houses[current] + StealMaxValue(houses, current + 2);
+            int valueSkipCurrentHouse = StealMaxValue(houses, current + 1);
 
 
-            return Math.Max(considerCurrentHouseValue, skipCurrentHouseValue);
+            // Combine
+            return Math.Max(valueConsiderCurrentHouse, valueSkipCurrentHouse);
         }
 
 

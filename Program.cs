@@ -6,8 +6,8 @@ namespace DC
     {
         static void Main(string[] args)
         {
-            NumberFactor.Work();
-            //HouseThief.Work();
+            //NumberFactor.Work();
+            HouseThief.Work();
             //Convert1String2Another.Work();
             //ZeroOneKnapsack.Work();
             //LongestCommonSubsequence.Work();
