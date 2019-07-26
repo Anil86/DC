@@ -6,7 +6,6 @@ namespace DC
     {
         private int NoOfTimes(int n, (int p1, int p2, int p3) parts)
         {
-            _count++;
             // Solve small sub-problems
             switch (n)
             {
@@ -30,11 +29,11 @@ namespace DC
         }
 
 
-        private static int _count;
+        
         public static void Work()
         {
             int noOfTimes = new NumberFactor().NoOfTimes(6, (p1: 1, p2: 3, p3: 4));
-            WriteLine(noOfTimes);WriteLine(_count);
+            WriteLine(noOfTimes);
         }
     }
 }
