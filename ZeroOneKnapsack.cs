@@ -7,26 +7,27 @@ namespace DC
     {
         private int FillKnapsack(Item[] items, int capacity)
         {
-            return FillKnapsack(capacity, 0);
+            return FillKnapsack(0, capacity);
 
 
 
-            int FillKnapsack(int cap, int current)
+            int FillKnapsack(int current, int cap)
             {
                 // Solve small sub-problems
-                if (cap == 0 || current == items.Length) return 0;
+                if (current == items.Length || cap == 0) return 0;
 
 
                 // Divide
-                int considerCurrentValue = 0;
+                int valueConsiderCurrent = 0;
                 if (items[current].Weight <= cap)
-                    considerCurrentValue = items[current].Value +
-                                            FillKnapsack(cap - items[current].Weight, current + 1);
-                int skipCurrentValue = FillKnapsack(cap, current + 1);
+                    valueConsiderCurrent =
+                        items[current].Value + FillKnapsack(current + 1, cap - items[current].Weight);
+
+                int valueSkipCurrent = FillKnapsack(current + 1, cap);
 
 
                 // Combine
-                return Math.Max(considerCurrentValue, skipCurrentValue);
+                return Math.Max(valueConsiderCurrent, valueSkipCurrent);
             }
         }
 

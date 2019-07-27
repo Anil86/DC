@@ -8,8 +8,8 @@ namespace DC
         {
             //NumberFactor.Work();
             //HouseThief.Work();
-            Convert1String2Another.Work();
-            //ZeroOneKnapsack.Work();
+            //Convert1String2Another.Work();
+            ZeroOneKnapsack.Work();
             //LongestCommonSubsequence.Work();
             //LongestPalindromicSubsequence.Work();
             //LongestPalindromicSubstring.Work();
