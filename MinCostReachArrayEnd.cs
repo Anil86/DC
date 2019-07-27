@@ -18,19 +18,20 @@ namespace DC
 
 
                 // Divide
-                // 1st row
-                if (row == 0) return array[0, column] + FindMinCost(0, column - 1);
-                // 1st column
-                if (column == 0) return array[row, 0] + FindMinCost(row - 1, column);
+                if (row == 0)   // Case 3: 1st row
+                    return array[0, column] + FindMinCost(0, column - 1);
+                if (column == 0)   // Case 4: 1st column
+                    return array[row, 0] + FindMinCost(row - 1, 0);
 
-                // Other than 1st row & 1st column
-                int costTillLeftCell = FindMinCost(row, column - 1);
-                int costTillTopCell = FindMinCost(row - 1, column);
+                // Cells other than 1st row & 1st column
+                // Case 1: Cost considering left cell
+                int costUsingLeftCell = array[row, column] + FindMinCost(row, column - 1);
+                // Case 2: Cost considering top cell
+                int costUsingTopCell = array[row, column] + FindMinCost(row - 1, column);
 
 
                 // Combine
-                int minCostTillPreviousCell = Math.Min(costTillLeftCell, costTillTopCell);
-                return array[row, column] + minCostTillPreviousCell;
+                return Math.Min(costUsingLeftCell, costUsingTopCell);
             }
         }
 
