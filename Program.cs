@@ -11,8 +11,8 @@ namespace DC
             //Convert1String2Another.Work();
             //ZeroOneKnapsack.Work();
             //LongestCommonSubsequence.Work();
-            LongestPalindromicSubsequence.Work();
-            //LongestPalindromicSubstring.Work();
+            //LongestPalindromicSubsequence.Work();
+            LongestPalindromicSubstring.Work();
             //MinCostReachArrayEnd.Work();
             //NoOfWaysReachLastGivenCost.Work();
         }
