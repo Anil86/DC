@@ -10,8 +10,8 @@ namespace DC
             //HouseThief.Work();
             //Convert1String2Another.Work();
             //ZeroOneKnapsack.Work();
-            LongestCommonSubsequence.Work();
-            //LongestPalindromicSubsequence.Work();
+            //LongestCommonSubsequence.Work();
+            LongestPalindromicSubsequence.Work();
             //LongestPalindromicSubstring.Work();
             //MinCostReachArrayEnd.Work();
             //NoOfWaysReachLastGivenCost.Work();

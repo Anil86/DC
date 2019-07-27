@@ -13,27 +13,23 @@ namespace DC
 
             int FindLongestPalindromeLength(int start, int end)
             {
-                // Solve small sub-problem
+                // Solve small sub-problems
                 if (start == end) return 1;
 
-                // If we have traversed more than 1/2 of string then return 0 as we don't need to process it
-                if (start > end) return 0;
+                // If more than 1/2 of string traversed, then return 0 as no processing required
+                if (end < start) return 0;
 
 
                 // Divide
-                int match = 0, noMatchR = 0, noMatchL = 0;
+                if (str[start] == str[end]) // Case 1
+                    return 2 + FindLongestPalindromeLength(start + 1, end - 1);
 
-                if (str[start] == str[end])
-                    match = 2 + FindLongestPalindromeLength(start + 1, end - 1);
-                else
-                {
-                    noMatchR = FindLongestPalindromeLength(start, end - 1);
-                    noMatchL = FindLongestPalindromeLength(start + 1, end);
-                }
+                int noOfMatchSkipEnd = FindLongestPalindromeLength(start, end - 1);   // Case 2
+                int noOfMatchSkipStart = FindLongestPalindromeLength(start + 1, end);   // Case 3
 
 
                 // Combine
-                return Math.Max(match, Math.Max(noMatchR, noMatchL));
+                return Math.Max(noOfMatchSkipEnd, noOfMatchSkipStart);
             }
         }
 
