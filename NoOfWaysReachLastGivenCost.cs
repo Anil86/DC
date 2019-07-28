@@ -4,31 +4,32 @@ namespace DC
 {
     public class NoOfWaysReachLastGivenCost
     {
-        private int NoOfWays(int[,] array, int cost)
+        private int NoOfWays(int[,] array, int capacity)
         {
-            return NoOfWays(array.GetLength(0) - 1, array.GetLength(1) - 1, cost);
+            return NoOfWays(array.GetLength(0) - 1, array.GetLength(1) - 1, capacity);
 
 
 
-            int NoOfWays(int row, int column, int c)
+            int NoOfWays(int row, int column, int cap)
             {
                 // Solve small sub-problems
-                if (c <= 0) return 0;   // Cost = 0
+                if (cap <= 0) return 0;   // Cost = 0
 
                 // 1st cell
-                if (row == 0 && column == 0) return c == array[0, 0] ? 1 : 0;
+                if (row == 0 && column == 0) return cap == array[row, column] ? 1 : 0;
 
 
                 // Divide
-                int previousCellAllowedCost = c - array[row, column];
+                int previousCellAllowedCost = cap - array[row, column];
 
-                // 1st row
-                if (row == 0) return NoOfWays(0, column - 1, previousCellAllowedCost);
-                // 1st column
-                if (column == 0) return NoOfWays(row - 1, 0, previousCellAllowedCost);
+                if (row == 0)   // Case 3: 1st row
+                    return NoOfWays(0, column - 1, previousCellAllowedCost);
+                if (column == 0)   // Case 4: 1st column
+                    return NoOfWays(row - 1, 0, previousCellAllowedCost);
 
-                // Other than 1st row & 1st column
+                // Case 1: No.of ways considering left cell
                 int noOfWaysReachLeftCell = NoOfWays(row, column - 1, previousCellAllowedCost);
+                // Case 2: No.of ways considering top cell
                 int noOfWaysReachTopCell = NoOfWays(row - 1, column, previousCellAllowedCost);
 
 
@@ -53,6 +54,7 @@ namespace DC
             //    {4, 7, 1},
             //    {7, 1, 3}
             //};
+
             int cost = 25;
             //int cost = 15;
 
