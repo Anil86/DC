@@ -15,7 +15,8 @@ namespace DC
             //LongestPalindromicSubstring.Work();
             //MinCostReachArrayEnd.Work();
             //NoOfWaysReachLastGivenCost.Work();
-            ElementOnceInSortedArray.Work();
+            //ElementOnceInSortedArray.Work();
+            KthElement2SortedArrays.Work();
         }
     }
 }
