@@ -16,7 +16,8 @@ namespace DC
             //MinCostReachArrayEnd.Work();
             //NoOfWaysReachLastGivenCost.Work();
             //ElementOnceInSortedArray.Work();
-            KthElement2SortedArrays.Work();
+            //KthElement2SortedArrays.Work();
+            SumMiddleElements2SortedArrays.Work();
         }
     }
 }
