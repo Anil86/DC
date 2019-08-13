@@ -17,7 +17,8 @@ namespace DC
             //NoOfWaysReachLastGivenCost.Work();
             //ElementOnceInSortedArray.Work();
             //KthElement2SortedArrays.Work();
-            SumMiddleElements2SortedArrays.Work();
+            //SumMiddleElements2SortedArrays.Work();
+            PaintersPartitionProblem.Work();
         }
     }
 }
