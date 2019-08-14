@@ -4,6 +4,10 @@ namespace DC
 {
     public class NumberFactor
     {
+        /// <summary>Calculates no.of ways number can be obtained from given 3 numbers.</summary>
+        /// <param name="n">The number.</param>
+        /// <param name="parts">The parts.</param>
+        /// <returns>  No.of ways.</returns>
         private int NoOfTimes(int n, (int p1, int p2, int p3) parts)
         {
             // Solve small sub-problems
@@ -14,7 +18,6 @@ namespace DC
                 case 2:   // {1, 1}
                     return 1;
                 case 3: return 2;   // {3}, {1, 1, 1}
-                default: break;
             }
 
 
