@@ -6,7 +6,6 @@ namespace DC
     public class PaintersPartitionProblem
     {
         #region Dp
-        // ToDo: Move to Dp & Search project
         private int MinimizeMaxWorkDp(int noOfPainters, int[] boards)
         {
             int[,] dp = new int[boards.Length, noOfPainters + 1];
