@@ -9,11 +9,11 @@ namespace DC
         {
             int[,] dp = new int[boards.Length, noOfPainters + 1];
 
-            return MinimizeMaxWorkLocal(boards.Length - 1, noOfPainters);
+            return MinimizeMaxWork(boards.Length - 1, noOfPainters);
 
 
 
-            int MinimizeMaxWorkLocal(int noOfBoards, int painters)
+            int MinimizeMaxWork(int noOfBoards, int painters)
             {
                 // Solve small sub-problems
                 if (painters == 1) return dp[noOfBoards, 1] = SumWork(0, noOfBoards); // No.of painters = 1
@@ -26,7 +26,7 @@ namespace DC
                 for (int i = 0; i < noOfBoards; i++)
                 {
                     int prevPaintersMax = dp[i, painters - 1] == 0
-                        ? dp[i, painters - 1] = MinimizeMaxWorkLocal(i, painters - 1)
+                        ? dp[i, painters - 1] = MinimizeMaxWork(i, painters - 1)
                         : dp[i, painters - 1];
                     int lastPainterSum = SumWork(i + 1, noOfBoards);
 
