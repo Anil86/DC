@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DC
+﻿namespace DC
 {
     class Program
     {
