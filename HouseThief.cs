@@ -8,15 +8,23 @@ namespace DC
         private int StealMaxValue(int[] houses, int current)
         {
             // Solve small sub-problems
-            if (current >= houses.Length) return 0;
+            if (current >= houses.Length) return 0;   // When crossed last house, return
 
 
             // Divide
+            // Choice 1: Take current house
+            // Skip next house & find remaining values from current + 2
+            // choice1Value = currentHouse + Steal(currentHouse + 2)
             int valueConsiderCurrentHouse = houses[current] + StealMaxValue(houses, current + 2);
+
+            // Choice 2: Skip current house
+            // Don't consider current house & find remaining values from current + 1
+            // choice2Value = 0 + Steal(currentHouse + 1)
             int valueSkipCurrentHouse = StealMaxValue(houses, current + 1);
 
 
             // Combine
+            // Because max value has to be found, take max of choice 1 & 2.
             return Math.Max(valueConsiderCurrentHouse, valueSkipCurrentHouse);
         }
 
