@@ -14,19 +14,26 @@ namespace DC
             int FillKnapsack(int current, int cap)
             {
                 // Solve small sub-problems
-                if (current == items.Length || cap == 0) return 0;
+                // When considered all 
+                if (current == items.Length ||   // When considered all items, return
+                    cap == 0) return 0;   // When knapsack filled, return
 
 
                 // Divide
+                // Choice 1: Pick current item +
+                // Profit from remaining items
                 int valueConsiderCurrent = 0;
-                if (items[current].Weight <= cap)
+                if (items[current].Weight <= cap)   // Check current weight not > capacity
                     valueConsiderCurrent =
                         items[current].Value + FillKnapsack(current + 1, cap - items[current].Weight);
 
+                // Choice 2: Skip current item + 
+                // Profit from remaining items
                 int valueSkipCurrent = FillKnapsack(current + 1, cap);
 
 
                 // Combine
+                // Return max of above 2 choices
                 return Math.Max(valueConsiderCurrent, valueSkipCurrent);
             }
         }
@@ -50,7 +57,7 @@ namespace DC
 
 
 
-    internal struct Item
+    internal struct Item   // Knapsack item struct
     {
         public Item(string name, int weight, int value)
         {
