@@ -20,8 +20,10 @@ namespace DC
 
 
                 // Divide
-                int previousCellAllowedCost = cap - array[row, column];
+                int previousCellAllowedCost = cap - array[row, column];   // New capacity after taking current cell
 
+
+                // Optimizations
                 if (row == 0)   // Case 3: 1st row
                     return NoOfWays(0, column - 1, previousCellAllowedCost);
                 if (column == 0)   // Case 4: 1st column
@@ -34,7 +36,7 @@ namespace DC
 
 
                 // Combine
-                return noOfWaysReachLeftCell + noOfWaysReachTopCell;
+                return noOfWaysReachLeftCell + noOfWaysReachTopCell;   // Total no.of ways
             }
         }
 
@@ -49,14 +51,14 @@ namespace DC
                 {3, 2, 1, 2},
                 {7, 1, 6, 3}
             };
+            int cost = 25;   // Ans: 2
+
             //int[,] array =
             //{
             //    {4, 7, 1},
             //    {7, 1, 3}
             //};
-
-            int cost = 25;
-            //int cost = 15;
+            //int cost = 15;   // Ans: 3
 
             int noOfWays = new NoOfWaysReachLastGivenCost().NoOfWays(array, cost);
             WriteLine(noOfWays);
