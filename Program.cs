@@ -10,8 +10,8 @@
             //ZeroOneKnapsack.Work();
             //LongestCommonSubsequence.Work();
             //LongestPalindromicSubsequence.Work();
-            LongestPalindromicSubstring.Work();
-            //MinCostReachArrayEnd.Work();
+            //LongestPalindromicSubstring.Work();
+            MinCostReachArrayEnd.Work();
             //NoOfWaysReachLastGivenCost.Work();
         }
     }
