@@ -36,14 +36,15 @@ namespace DC
 
                 // 2 possible ways to move:
                 // Case 1: Consider left cell
-                int costUsingLeftCell = array[row, column] + FindMinCost(row, column - 1);
+                int costTillLeftCell = FindMinCost(row, column - 1);
                 // Case 2: Consider top cell
-                int costUsingTopCell = array[row, column] + FindMinCost(row - 1, column);
+                int costTillTopCell = FindMinCost(row - 1, column);
 
 
                 // Combine
                 // As min cost has to be found, take min of left & top move
-                return Math.Min(costUsingLeftCell, costUsingTopCell);
+                int minCostTillPreviousCell = Math.Min(costTillLeftCell, costTillTopCell);
+                return array[row, column] + minCostTillPreviousCell;
             }
         }
 
